@@ -1,1 +1,5 @@
-Proyectos Python.code-workspace
+Proyectos_Python.code-workspace
+*.exe
+*.o
+*.obj
+.vscode/
