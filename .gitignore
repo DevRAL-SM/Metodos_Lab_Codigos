@@ -3,3 +3,4 @@ Proyectos_Python.code-workspace
 *.o
 *.obj
 .vscode/
+.venv/
