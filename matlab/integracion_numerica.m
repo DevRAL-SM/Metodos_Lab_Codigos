@@ -6,12 +6,15 @@
 
 clc; clear; close all;
 
-% 1. LEER DATOS DEL EXCEL
-archivo = 'integracion_numerica.xlsx';
+% 1. LEER DATOS DEL EXCEL DESDE CARPETA HERMANA USANDO RUTA RELATIVA
+% ".." significa subir un nivel (salir de la carpeta de scripts)
+ruta_completa = fullfile('..', 'data', 'raw', 'integracion_numerica.xlsx');
+
 try
-    datos = readmatrix(archivo);
+    datos = readmatrix(ruta_completa);
+    fprintf('Archivo cargado exitosamente desde: %s\n', ruta_completa);
 catch
-    error('No se pudo encontrar el archivo. Asegúrate de que "datos.xlsx" esté en la ruta actual.');
+    error('No se pudo encontrar el archivo. Verifica que la ruta relativa sea correcta:\n%s', ruta_completa);
 end
 
 % Asignación de variables termodinámicas
